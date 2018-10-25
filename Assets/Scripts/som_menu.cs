@@ -3,14 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class som_menu : MonoBehaviour {
+	public AudioSource sfx;
+	public AudioClip click;
+	public AudioClip hover;
+	public AudioClip back;
+	public AudioClip exit;
 
-	// Use this for initialization
-	void Start () {
-		
+	public void Click(){
+		sfx.Pause();
+		sfx.PlayOneShot(click);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public void Hover(){
+		sfx.Pause();
+		sfx.PlayOneShot(hover);
+	}
+	public void Back(){
+		sfx.Pause();
+		sfx.PlayOneShot(back);
+	}
+	public void Exit(){
+		sfx.Pause();
+		sfx.PlayOneShot(exit);
 	}
 }
