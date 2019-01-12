@@ -29,6 +29,6 @@ public class FruitSpawner : MonoBehaviour {
 		
 		Instantiate (fruits[Random.Range(0, fruits.Length)], temp, Quaternion.identity);
 		
-		StartCoroutine (SpawnFruit(Random.Range(1f, 2f)));
+		StartCoroutine (SpawnFruit(Random.Range(1f, 1f)));
 	}
 }
