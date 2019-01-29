@@ -323,19 +323,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Anim
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Anim
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Gabriel\Desktop\tccGit\tcc
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9c0b0000
-    m_LastClickedID: 2972
+    m_SelectedIDs: 90090000
+    m_LastClickedID: 2448
     m_ExpandedIDs: 000000006e09000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: e8fbffff00000000
+    m_ExpandedIDs: e8fbffff00000000e40c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
