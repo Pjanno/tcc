@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
-
 public float maxSpeed;
 public float jumpForce;
-
 private bool grounded;
 private bool jumping;
-
 private Rigidbody2D rb;
 private Animator anim;
 private SpriteRenderer sprite;
-
 public Transform groundCheck;
 
 void Start ()
@@ -23,15 +20,10 @@ void Start ()
 	anim = GetComponent<Animator> ();
 }
 
-void Update ()
+/*void Update ()
 {
-	grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
 	
-	if (Input.GetButtonDown("Jump") && grounded)
-	{
-		jumping = true;
-	}
-}
+}*/
 
 void FixedUpdate ()
 {
@@ -47,6 +39,13 @@ void FixedUpdate ()
 	{
 		rb.AddForce(new Vector2(0f, jumpForce));
 		jumping = false;
+	}
+
+	grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
+
+	if (Input.GetButtonDown("Jump") && grounded)
+	{
+		jumping = true;
 	}
 }
 
