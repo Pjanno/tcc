@@ -20,11 +20,6 @@ void Start ()
 	anim = GetComponent<Animator> ();
 }
 
-/*void Update ()
-{
-	
-}*/
-
 void FixedUpdate ()
 {
 	float move = Input.GetAxis("Horizontal");
@@ -47,11 +42,10 @@ void FixedUpdate ()
 	{
 		jumping = true;
 	}
+	Physics2D.IgnoreLayerCollision(8, 9);
 }
-
-void Flip ()
-{
-	sprite.flipX = !sprite.flipX;
-}
-
+	void Flip ()
+	{
+		sprite.flipX = !sprite.flipX;
+	}
 }
