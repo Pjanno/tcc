@@ -53,11 +53,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AjusteVolume.cs" />
      <Compile Include="Assets\Scripts\FruitSpawner.cs" />
      <Compile Include="Assets\Scripts\generalSFX.cs" />
+     <Compile Include="Assets\Scripts\LoginRequest.cs" />
      <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
      <Compile Include="Assets\Scripts\requestGET.cs" />
      <Compile Include="Assets\Scripts\SceneMock.cs" />
+     <Compile Include="Assets\Scripts\TokenID.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

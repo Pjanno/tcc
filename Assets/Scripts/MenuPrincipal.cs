@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour {
 
-    public GameObject PainelSair, menuPrincipal;
-    
+    public GameObject PainelSair, MainMenuPrincipal, PainelConfig;
+    public AudioSource AudioSourceMenu;
+
 
     public void Awake()
     {
         Time.timeScale = 1;
+        AudioSourceMenu.volume = PlayerPrefs.GetFloat("Volume");
     }
 
     public void Start()
@@ -24,14 +26,16 @@ public class MenuPrincipal : MonoBehaviour {
     {
         StartCoroutine(CarregarScene(1.5f, "Level01"));
     }
-    public static void Config()
+    public void Config()
     {
-        
+        MainMenuPrincipal.SetActive(false);
+        PainelSair.SetActive(false); //Sei lá, vai que ativa com bug
+        PainelConfig.SetActive(true);
     }
     public void Sair()
     {
         //Não sai efetivamente, pergunta primeiro com a outra box.
-        menuPrincipal.SetActive(false);
+        MainMenuPrincipal.SetActive(false);
         PainelSair.SetActive(true);
     }
     public void SairEfetivo()
@@ -40,12 +44,12 @@ public class MenuPrincipal : MonoBehaviour {
     }
     public void Voltar()
     {
-        menuPrincipal.SetActive(true);
+        MainMenuPrincipal.SetActive(true);
+        PainelConfig.SetActive(false);
         PainelSair.SetActive(false);
     }
 
     // PARTE SONORA DO MENU SFX ========================================================
-    public AudioSource AudioSourceMenu;
     public AudioClip[] sfx = new AudioClip[4]; // 0 = Click
                                                // 1 = Hover
                                                // 2 = Back
