@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212527677165994402}
   - component: {fileID: 58708359733318544}
   - component: {fileID: 50943887219909396}
+  - component: {fileID: 114776198051841304}
   m_Layer: 0
   m_Name: blueberries
   m_TagString: Fruits
@@ -60,7 +61,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &58708359733318544
 CircleCollider2D:
@@ -71,12 +72,23 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.0055179596}
   serializedVersion: 2
   m_Radius: 0.25930429
+--- !u!114 &114776198051841304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772064849650932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d14bc015b8d642aaaa79cbaf4e9f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212527677165994402
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -109,7 +121,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1232390077
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 70202f39027b28741b18cf11ec4ff827, type: 3}
