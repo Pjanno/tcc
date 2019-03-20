@@ -502,9 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859b2ab420c980444af256fc2ebde7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruits:
-  - {fileID: 1772064849650932, guid: d5995943322f7dc44bc45a27cb5d5625, type: 2}
-  - {fileID: 1167200552634888, guid: 1d737f7c905ce494f8a6b73f78d4d397, type: 2}
+  Frutas: {fileID: 1944396077675562, guid: 552ed1775b37bc84dbd69caf74d6b48a, type: 2}
 --- !u!61 &1138374115
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -820,6 +818,11 @@ Prefab:
     - target: {fileID: 4993077317980124, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114329781042017936, guid: c0f8f978c61b84047a0ec21f0e0c1771,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
