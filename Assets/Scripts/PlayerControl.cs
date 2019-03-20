@@ -2,80 +2,51 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+public class PlayerControl : MonoBehaviour {
+public float maxSpeed;
+public float jumpForce;
+private bool grounded;
+private bool jumping;
+private Rigidbody2D rb;
+private Animator anim;
+private SpriteRenderer sprite;
+public Transform groundCheck;
 
-public class PlayerControl : MonoBehaviour
+void Awake ()
 {
-    public float maxSpeed;
-    public float jumpForce;
-    private bool grounded;
-    private bool jumping, movendo;
-    private Rigidbody2D rb;
-    private Animator anim;
-    private SpriteRenderer sprite;
-    public Transform groundCheck;
+    rb = GetComponent<Rigidbody2D> ();
+    sprite = GetComponent<SpriteRenderer> ();
+    anim = GetComponent<Animator> ();
+}
 
-    void Start()
+void Update ()
+{
+    grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
+
+    if (Input.GetButtonDown ("Jump") && grounded) {
+        jumping = true;
+    }
+}
+
+void FixedUpdate ()
+{
+    float move = Input.GetAxis("Horizontal");
+    rb.velocity = new Vector2 (move * maxSpeed, rb.velocity.y);
+
+    if ((move > 0f && sprite.flipX) || (move < 0f && !sprite.flipX))
     {
-        rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        Flip();
     }
 
-    //Melhor colocar o move aqui pra ele ser usado por todos os métodos
-    float move;
-
-    void Update()
+    if (jumping) 
     {
-        move = Input.GetAxis("Horizontal");
-
-        if (move != 0f)
-        {
-            Mover();
-            Flip();
-        }
-
-        // Função do pulo chamada em todos os Frames
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            jumping = true;
-        }
-    }
-
-    void FixedUpdate()
-    {
-        // Movimento
-        if (movendo)
-        {
-            Mover();
-        }
-        // Pulo
-        if (jumping)
-        {
-            Pular();
-        }
-
-    }
-
-    void Flip()
-    {
-        if (move > 0)
-        {
-            sprite.flipX = false;
-        } else {
-            sprite.flipX = true;
-        }
-    }
-
-    // Funções de físicas usadas no fixed update
-    void Pular()
-    {
-        rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+        rb.AddForce(new Vector2(0f, jumpForce));
         jumping = false;
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
     }
+}
 
-    void Mover()
-    {
-        rb.transform.Translate(new Vector2(move * maxSpeed * Time.fixedDeltaTime, rb.velocity.y));
-    }
+void Flip ()
+{
+    sprite.flipX = !sprite.flipX;
+}
 }
