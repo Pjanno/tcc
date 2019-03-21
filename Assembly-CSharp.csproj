@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\menuCreator.cs" />
      <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
      <Compile Include="Assets\Scripts\MyTime.cs" />
+     <Compile Include="Assets\Scripts\NPC.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\requestGET.cs" />
      <Compile Include="Assets\Scripts\SceneMock.cs" />

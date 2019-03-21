@@ -9,6 +9,7 @@ TagManager:
   - senha
   - Fruits
   - Ground
+  - NPC
   layers:
   - Default
   - TransparentFX

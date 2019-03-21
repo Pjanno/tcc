@@ -16,7 +16,7 @@ private void OnCollisionEnter2D(Collision2D collision) {
 		//Destroy(gameObject); Se ativado, iria destruir a fruta instantaneamente após a colisão com o objeto de tag Ground.
 		Destroy(gameObject, 1f); //Vai destruir a fruta depois de 1 segundo após a colisão com o objeto de tag Ground. 
 	} 
-	if ((collision.gameObject.tag == "Player") || (collision.gameObject.tag == "Npc")) {
+	if ((collision.gameObject.tag == "Player") || (collision.gameObject.tag == "NPC")) {
 		Destroy(gameObject); //Destroi a fruta instantaneamente após colisão com o Player.
 		Score.scoreValue += 1;
 	} 

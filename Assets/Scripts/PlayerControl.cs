@@ -33,6 +33,8 @@ void FixedUpdate ()
     float move = Input.GetAxis("Horizontal");
     rb.velocity = new Vector2 (move * maxSpeed, rb.velocity.y);
 
+	//Se movimento for menor que zero (ou seja, pra esquerda) e o boneco estiver virado p/ dir ele faz o flip
+	//Se movimento for maior que zero(ou seja, para direita) e o boneco estiver virado p/ esq ele da o flip
     if ((move > 0f && sprite.flipX) || (move < 0f && !sprite.flipX))
     {
         Flip();
