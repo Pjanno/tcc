@@ -38,7 +38,7 @@ public class LoginRequest : MonoBehaviour {
         form.AddField("password", senha);
 
         //Faz o POST
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:8000/api/auth/login/", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://127.0.0.1:8000/api/auth/login/", form))
         {
             yield return www.SendWebRequest();
 
@@ -57,11 +57,11 @@ public class LoginRequest : MonoBehaviour {
                 meuToken = JsonUtility.FromJson<TokenID>(www.downloadHandler.text);
 
                 if (PlayerPrefs.HasKey("Token")) {
-                    PlayerPrefs.SetString("Token", meuToken.getToken());
+                    PlayerPrefs.SetString("Token", meuToken.key);
 
                 } else {
-                    PlayerPrefs.SetString("Token", meuToken.getToken());
-                    PlayerPrefs.SetInt("ID", meuToken.getId());
+                    PlayerPrefs.SetString("Token", meuToken.key);
+                    PlayerPrefs.SetInt("ID", meuToken.id);
                 }
                 StartCoroutine(CarregaSceneNova("Logo", 0f));
             }
@@ -122,5 +122,54 @@ public class LoginRequest : MonoBehaviour {
     {
         yield return new WaitForSeconds(tempoEspera);
         SceneManager.LoadScene(scene);
+    }
+
+    //MOCK AREA 51
+    public void MockDasEras()
+    {
+        StartCoroutine(Login2("admin", "admin"));
+    }
+
+    public IEnumerator Login2(string email, string senha)
+    {
+        ///Cria o formulário com os campos a serem enviados
+        WWWForm form = new WWWForm();
+        form.AddField("username", email);
+        form.AddField("password", senha);
+
+        //Faz o POST
+        using (UnityWebRequest www = UnityWebRequest.Post("http://127.0.0.1:8000/api/auth/login/", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log(www.downloadHandler.text);
+
+                meuToken = JsonUtility.FromJson<TokenID>(www.downloadHandler.text);
+
+                Debug.Log(meuToken.key);
+
+                yield return www.downloadHandler.text;
+
+                if (PlayerPrefs.HasKey("Token"))
+                {
+                    PlayerPrefs.SetString("Token", meuToken.key);
+                }
+                else
+                {
+                    PlayerPrefs.SetString("Token", meuToken.key);
+                    PlayerPrefs.SetInt("ID", meuToken.id);
+                }
+                
+
+                GetSetItemBD gsi = new GetSetItemBD();
+                StartCoroutine(gsi.GetJsonFromBD());
+            }
+        }
     }
 }

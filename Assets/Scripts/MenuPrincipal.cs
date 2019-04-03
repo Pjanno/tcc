@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour {
 
-    public GameObject PainelSair, MainMenuPrincipal, PainelConfig;
+    public GameObject PainelSair, MainMenuPrincipal, PainelConfig, TransicaoImg;
     public AudioSource AudioSourceMenu;
 
+    public void AtivaTransicao()
+    {
+        TransicaoImg.SetActive(true);
+    }
 
     public void Awake()
     {
