@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 710231096}
   - component: {fileID: 710231099}
   - component: {fileID: 710231100}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: NPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -1303,8 +1303,7 @@ Prefab:
     - target: {fileID: 1717494033246044, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000,
-        type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 4114670598792310, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.01
@@ -1327,6 +1326,14 @@ Prefab:
         type: 2}
       propertyPath: m_FlipY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634643083330732, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717494033246044, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
@@ -1479,10 +1486,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1950622718}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: checkGround
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
