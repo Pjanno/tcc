@@ -1285,6 +1285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLeft: 60
   timer: {fileID: 1912300887}
+  IconeRelogio: {fileID: 1449223028}
 --- !u!1 &1931213988
 GameObject:
   m_ObjectHideFlags: 0

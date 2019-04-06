@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class LoginRequest : MonoBehaviour {
 
     GameObject email, senha;
-    public GameObject LoginHolder, LoadingHolder, InfoMessageHolder;
+    public GameObject LoginHolder, LoadingHolder, InfoMessageHolder, TransitionLogin;
 
     void Awake()
     {
@@ -101,7 +101,8 @@ public class LoginRequest : MonoBehaviour {
     public void Nao()
     {
         PreMenuHolder.GetComponent<Animator>().SetBool("reverse", true);
-        StartCoroutine(CarregaSceneNova("TeamLogo", 1.2f));
+        TransitionLogin.GetComponent<Animator>().SetBool("fadeOut", true);
+        StartCoroutine(CarregaSceneNova("TeamLogo", 2f));
     }
 
     public void Sim()

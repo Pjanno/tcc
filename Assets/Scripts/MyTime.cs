@@ -7,6 +7,8 @@ public class MyTime : MonoBehaviour {
 
 	public int timeLeft = 60;
 	public Text timer;
+    public GameObject IconeRelogio;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine("LoseTime");
@@ -20,6 +22,7 @@ public class MyTime : MonoBehaviour {
 		if (timeLeft <= 0) {
 			StopCoroutine("LoseTime");
 			timer.text = "Fim de Jogo!";
+            IconeRelogio.GetComponent<Animator>().SetBool("desperta", true);
 		}
 	}
 
