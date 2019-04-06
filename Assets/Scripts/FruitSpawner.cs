@@ -21,7 +21,7 @@ public class FruitSpawner : MonoBehaviour {
 
     void Start()
     {
-        StartCoroutine(SpawnFruit(1f));
+        StartCoroutine(SpawnFruit(3f));
     }
 
     void Update()
