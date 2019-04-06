@@ -19,6 +19,7 @@ public class FruitSpawner : MonoBehaviour {
 		x2 = transform.position.x + col.bounds.size.x /2f;
 	}
 
+
     void Start()
     {
         StartCoroutine(SpawnFruit(3f));
@@ -29,6 +30,7 @@ public class FruitSpawner : MonoBehaviour {
         // Aleatoriza a imagem automaticamente
         IdFruta = Random.Range(0, 5);
         Frutas.GetComponent<SpriteRenderer>().sprite = Frutas.transform.GetChild(IdFruta).GetComponent<SpriteRenderer>().sprite;
+
     }
 
   	IEnumerator SpawnFruit(float time) {

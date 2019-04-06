@@ -12,7 +12,7 @@ public class Score : MonoBehaviour {
 		scoreText = GetComponent<Text>();
 	}
 	void Update () {
-		scoreText.text = "FRUTAS: " + scoreValue;
+		scoreText.text = "" + scoreValue;
 		//a contagem está no script destroyFruits
 	} 
 }

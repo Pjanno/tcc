@@ -7,6 +7,7 @@ public class NPC : MonoBehaviour {
 	public float speed;
 	public float stopDistance;
 	private Transform target;
+
 	//private SpriteRenderer sprite;
 
 	// Use this for initialization
@@ -17,18 +18,11 @@ public class NPC : MonoBehaviour {
 	void Update () {
 		if (Vector2.Distance(transform.position, target.position) > stopDistance) {
 			transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-		}
-
+		}	
 	}
-
-	/*private void OnCollisionEnter2D(Collision2D collision) { 
-		if(collision.gameObject.tag == "Player") { 
-			Flip(); 
-		}
-	}
-
-	void Flip ()
+	/*void Flip ()
 	{
     	sprite.flipX = !sprite.flipX;
 	}*/
+
 }
