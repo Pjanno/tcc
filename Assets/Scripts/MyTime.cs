@@ -21,11 +21,11 @@ public class MyTime : MonoBehaviour {
 
 		if (timeLeft <= 0) {
 			StopCoroutine("LoseTime");
-			timer.text = "Fim de Jogo!";
+			//timer.text = "Fim de Jogo!";
             IconeRelogio.GetComponent<Animator>().SetBool("desperta", true);
 		}
 	}
-
+	
 	IEnumerator LoseTime() {
 		while (true) {
 			yield return new WaitForSeconds(1);
