@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseScript : MonoBehaviour {
 
 	public static bool JogoPausado = false;
-	public GameObject pauseMenuUI;
+	public GameObject pauseMenuUI, Spawner;
 
 	void Update () 
 	{
@@ -23,6 +23,7 @@ public class PauseScript : MonoBehaviour {
 
 	public void Continuar ()
 	{
+        Spawner.GetComponent<FruitSpawner>().LigaSpawner();
 		pauseMenuUI.SetActive(false);
 		Time.timeScale = 1f;
 		JogoPausado = false;
@@ -30,7 +31,8 @@ public class PauseScript : MonoBehaviour {
 
 	void Pause ()
 	{
-		pauseMenuUI.SetActive(true);
+        Spawner.GetComponent<FruitSpawner>().DesligaSpawner();
+        pauseMenuUI.SetActive(true);
 		Time.timeScale = 0f;
 		JogoPausado = true;
 	}

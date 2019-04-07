@@ -9,20 +9,15 @@ public class FruitSpawner : MonoBehaviour {
 
     int IdFruta;
     private BoxCollider2D col;
-	
-	float x1, x2;
+    IEnumerator Spawner;
+    float x1, x2;
 
-    void Awake () {
+    void Awake ()
+    {
 		col = GetComponent<BoxCollider2D> ();
-		
 		x1 = transform.position.x - col.bounds.size.x /2f;
 		x2 = transform.position.x + col.bounds.size.x /2f;
-	}
-
-
-    void Start()
-    {
-        StartCoroutine(SpawnFruit(3f));
+        Spawner = SpawnFruit(0.7f);
     }
 
     void Update()
@@ -32,17 +27,27 @@ public class FruitSpawner : MonoBehaviour {
         Frutas.GetComponent<SpriteRenderer>().sprite = Frutas.transform.GetChild(IdFruta).GetComponent<SpriteRenderer>().sprite;
 
     }
+    // AQUI COMEÇA AS COISAS Só DO SPAWNER
+  	IEnumerator SpawnFruit(float time)
+    {
+        while (true)
+        {
+            yield return new WaitForSecondsRealtime(time);
 
-  	IEnumerator SpawnFruit(float time) {
-		yield return new WaitForSecondsRealtime (time);
-		
-		Vector3 temp = transform.position;
-		temp.x = Random.Range (x1, x2);
+            Vector3 temp = transform.position;
+            temp.x = Random.Range(x1, x2);
 
-        // Range pra fruta selecionar uma imagem aleatória:
-        
-        Instantiate (Frutas, temp, Quaternion.identity);
-		
-		StartCoroutine (SpawnFruit(Random.Range(0.7f, 0.7f))); //vai spawnar fruta a cada 0.7 segundos
+            // Range pra fruta selecionar uma imagem aleatória:
+
+            Instantiate(Frutas, temp, Quaternion.identity);
+        }
 	}
+    public void LigaSpawner()
+    {
+        StartCoroutine(Spawner);
+    }
+    public void DesligaSpawner()
+    {
+        StopCoroutine(Spawner);
+    }
 }

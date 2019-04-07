@@ -9,7 +9,7 @@ public class TelaGameOver : MonoBehaviour {
 
 	public GameObject gameOverUI;
 
-	public int timeLeft = 60;	
+	public int timeLeft = 60;
 
 	void Start () {
 		StartCoroutine("LoseTime");
@@ -19,8 +19,6 @@ public class TelaGameOver : MonoBehaviour {
 		if (timeLeft <= 0) {
 			StopCoroutine("LoseTime");
 			FimDeJogo();
-		} else {
-			Jogando();
 		}
 	}
 	public void FimDeJogo ()
@@ -29,14 +27,7 @@ public class TelaGameOver : MonoBehaviour {
 		Time.timeScale = 0f;
 		GameOver = true;
 	}
-
-	public void Jogando ()
-	{
-		gameOverUI.SetActive(false);
-		Time.timeScale = 1f;
-		GameOver = false;
-	}
-
+    	
 	public void CarregarMenu ()
 	{
 		Time.timeScale = 1f;
