@@ -22,7 +22,9 @@ public class MyTime : MonoBehaviour {
 		if (timeLeft <= 0) {
 			StopCoroutine("LoseTime");
 			//timer.text = "Fim de Jogo!";
-            IconeRelogio.GetComponent<Animator>().SetBool("desperta", true);
+            
+		} else if (timeLeft <= 10) {
+			IconeRelogio.GetComponent<Animator>().SetBool("desperta", true);
 		}
 	}
 	

@@ -264,7 +264,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 789393101}
         m_MethodName: CarregarMenu
         m_Mode: 1
         m_Arguments:
@@ -753,6 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1560333418}
   timeLeft: 60
+  FruitSpawner: {fileID: 1138374113}
 --- !u!114 &789393102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,7 +1010,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 789393102}
         m_MethodName: Sair
         m_Mode: 1
         m_Arguments:
@@ -1491,7 +1492,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 789393101}
         m_MethodName: JogarNovamente
         m_Mode: 1
         m_Arguments:
@@ -1614,7 +1615,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 789393102}
         m_MethodName: Continuar
         m_Mode: 1
         m_Arguments:
@@ -2247,7 +2248,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 789393102}
         m_MethodName: CarregarMenu
         m_Mode: 1
         m_Arguments:

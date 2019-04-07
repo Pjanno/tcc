@@ -7,8 +7,16 @@ public class NPC : MonoBehaviour {
 	public float speed;
 	public float stopDistance;
 	private Transform target;
+	private SpriteRenderer sprite;
+	public static PlayerControl Instance;
+	public bool faceLeft;
 
-	//private SpriteRenderer sprite;
+	void Awake ()
+	{
+		sprite = GetComponent<SpriteRenderer> ();
+		Instance = GetComponent<PlayerControl> ();
+		
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -18,11 +26,12 @@ public class NPC : MonoBehaviour {
 	void Update () {
 		if (Vector2.Distance(transform.position, target.position) > stopDistance) {
 			transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-		}	
+		}
 	}
-	/*void Flip ()
+
+	void Flip ()
 	{
     	sprite.flipX = !sprite.flipX;
-	}*/
+	}
 
 }

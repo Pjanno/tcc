@@ -11,6 +11,8 @@ public class TelaGameOver : MonoBehaviour {
 
 	public int timeLeft = 60;
 
+	public GameObject FruitSpawner; 
+
 	void Start () {
 		StartCoroutine("LoseTime");
 	}
@@ -23,6 +25,7 @@ public class TelaGameOver : MonoBehaviour {
 	}
 	public void FimDeJogo ()
 	{
+		FruitSpawner.GetComponent<FruitSpawner>().DesligaSpawner();
 		gameOverUI.SetActive(true);
 		Time.timeScale = 0f;
 		GameOver = true;
