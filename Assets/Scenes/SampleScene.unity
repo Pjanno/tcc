@@ -576,6 +576,21 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 82115496298151306, guid: e761819868158a44dbc69c8c87717bf7,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e89d69b51c768ad4bb67d9eeecb49278, type: 3}
+    - target: {fileID: 82115496298151306, guid: e761819868158a44dbc69c8c87717bf7,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82115496298151306, guid: e761819868158a44dbc69c8c87717bf7,
+        type: 2}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e761819868158a44dbc69c8c87717bf7, type: 2}
   m_IsPrefabAsset: 0

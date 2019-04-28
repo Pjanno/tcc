@@ -102,7 +102,11 @@ public class LoginRequest : MonoBehaviour {
     {
         PreMenuHolder.GetComponent<Animator>().SetBool("reverse", true);
         TransitionLogin.GetComponent<Animator>().SetBool("fadeOut", true);
-        StartCoroutine(CarregaSceneNova("TeamLogo", 2f));
+    }
+
+    public void TransitaProximaScene()
+    {
+        StartCoroutine(CarregaSceneNova("TeamLogo", 0f));
     }
 
     public void Sim()

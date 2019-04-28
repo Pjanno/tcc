@@ -21,6 +21,11 @@ public class PauseScript : MonoBehaviour {
 		}
 	}
 
+    public void UnPause()
+    {
+        Time.timeScale = 1f;
+    }
+
 	public void Continuar ()
 	{
         Spawner.GetComponent<FruitSpawner>().LigaSpawner();
@@ -36,6 +41,16 @@ public class PauseScript : MonoBehaviour {
 		Time.timeScale = 0f;
 		JogoPausado = true;
 	}
+
+    public void DesativaPauseScript()
+    {
+        this.gameObject.GetComponent<PauseScript>().enabled = false;
+    }
+    
+    public void AtivaPauseScript()
+    {
+        this.gameObject.GetComponent<PauseScript>().enabled = true;
+    }
 
 	public void CarregarMenu ()
 	{

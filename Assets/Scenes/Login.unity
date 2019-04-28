@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &219883364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1108,13 +1108,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1011897499}
   - component: {fileID: 1011897500}
+  - component: {fileID: 1011897501}
   m_Layer: 5
   m_Name: ConfirmHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1011897499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1154,6 +1155,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1011897501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1011897498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95861c6b9d4eafe4aa51b7f961080e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoginHolder: {fileID: 0}
+  LoadingHolder: {fileID: 0}
+  InfoMessageHolder: {fileID: 0}
+  TransitionLogin: {fileID: 0}
+  PreMenuHolder: {fileID: 0}
 --- !u!1001 &1062679903
 Prefab:
   m_ObjectHideFlags: 0

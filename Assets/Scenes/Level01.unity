@@ -752,7 +752,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1560333418}
-  timeLeft: 60
 --- !u!114 &789393102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1172,15 +1171,15 @@ RectTransform:
   m_GameObject: {fileID: 1077763930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.26511666, y: 0.26511666, z: 0.26511666}
   m_Children: []
   m_Father: {fileID: 789393100}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 266.6, y: 160}
-  m_SizeDelta: {x: 131.89, y: 30}
+  m_AnchorMin: {x: 0.8525977, y: 0.80100006}
+  m_AnchorMax: {x: 0.99425286, y: 0.97567475}
+  m_AnchoredPosition: {x: 0.02999878, y: 0.21000671}
+  m_SizeDelta: {x: -4.49, y: -4.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1077763932
 MonoBehaviour:
@@ -1202,12 +1201,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 0c66fb43522e8124fa4d050f9cf38bbe, type: 3}
+    m_FontSize: 108
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1262,6 +1261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countDown: {fileID: 401234484}
   FruitSpawner: {fileID: 1138374113}
+  Canvas: {fileID: 789393096}
 --- !u!4 &1102153053
 Transform:
   m_ObjectHideFlags: 0
@@ -1782,10 +1782,10 @@ RectTransform:
   m_Father: {fileID: 789393100}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.033635046, y: 0.71965814}
-  m_AnchorMax: {x: 0.15663505, y: 0.94500005}
-  m_AnchoredPosition: {x: -33.846954, y: 30.100021}
-  m_SizeDelta: {x: -22.69, y: -24.08}
+  m_AnchorMin: {x: 0.011475139, y: 0.753}
+  m_AnchorMax: {x: 0.13447517, y: 0.97567475}
+  m_AnchoredPosition: {x: 2.3999634, y: -1}
+  m_SizeDelta: {x: -15.970001, y: -15.209999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1449223030
 MonoBehaviour:
@@ -2448,10 +2448,10 @@ RectTransform:
   m_Father: {fileID: 789393100}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.033635046, y: 0.71965814}
-  m_AnchorMax: {x: 0.15663505, y: 0.94500005}
-  m_AnchoredPosition: {x: 582.96, y: 35.044}
-  m_SizeDelta: {x: -37.49, y: -40.555}
+  m_AnchorMin: {x: 0.7112989, y: 0.7827751}
+  m_AnchorMax: {x: 0.8525977, y: 0.97567475}
+  m_AnchoredPosition: {x: 1.8999939, y: 3.7447052}
+  m_SizeDelta: {x: -19.7, y: -5.9565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1862652444
 MonoBehaviour:
@@ -2472,7 +2472,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 20fde149a352ecd419e4fae5b68471ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6fe2fb4eed0e78d4eb3457df01cfb9b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2555,15 +2555,15 @@ RectTransform:
   m_GameObject: {fileID: 1912300885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.51386, y: 0.51386, z: 0.51386}
   m_Children: []
   m_Father: {fileID: 789393100}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253.2, y: 160}
-  m_SizeDelta: {x: 131.89, y: 30}
+  m_AnchorMin: {x: 0.13447517, y: 0.77068174}
+  m_AnchorMax: {x: 0.2875801, y: 0.95400006}
+  m_AnchoredPosition: {x: 0.6000366, y: 1.0000153}
+  m_SizeDelta: {x: 119.92, y: 71.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912300887
 MonoBehaviour:
@@ -2585,12 +2585,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 0c66fb43522e8124fa4d050f9cf38bbe, type: 3}
+    m_FontSize: 61
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 83
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2616,9 +2616,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b209132f3620044283172f2a46baf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 60
+  timeLeft: 3
   timer: {fileID: 1912300887}
   IconeRelogio: {fileID: 1449223028}
+  FimDoTempo:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 789393101}
+        m_MethodName: FimDeJogo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1138374114}
+        m_MethodName: DesligaSpawner
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 789393102}
+        m_MethodName: DesativaPauseScript
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1931213988
 GameObject:
   m_ObjectHideFlags: 0

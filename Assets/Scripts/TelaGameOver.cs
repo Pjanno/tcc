@@ -9,18 +9,14 @@ public class TelaGameOver : MonoBehaviour {
 
 	public GameObject gameOverUI;
 
-	public int timeLeft = 60;
-
 	void Start () {
-		StartCoroutine("LoseTime");
+
 	}
 	void Update () 
 	{
-		if (timeLeft <= 0) {
-			StopCoroutine("LoseTime");
-			FimDeJogo();
-		}
+
 	}
+
 	public void FimDeJogo ()
 	{
 		gameOverUI.SetActive(true);
@@ -41,16 +37,5 @@ public class TelaGameOver : MonoBehaviour {
 		Time.timeScale = 1f;
 		GameOver = false;
 	}
-	IEnumerator LoseTime() {
-		while (true) {
-			yield return new WaitForSeconds(1);
-			timeLeft --;
-		}
-	}
-
-	/*public void Sair ()
-	{
-		Debug.Log ("Saindo do jogo...");
-		Application.Quit();
-	}*/
+	
 }
