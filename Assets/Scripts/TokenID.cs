@@ -3,7 +3,7 @@
 [System.Serializable]
 public class TokenID {
 
-    public int id;
+    public int user;
     public string key;
 
 }

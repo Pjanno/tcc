@@ -61,7 +61,7 @@ public class LoginRequest : MonoBehaviour {
 
                 } else {
                     PlayerPrefs.SetString("Token", meuToken.key);
-                    PlayerPrefs.SetInt("ID", meuToken.id);
+                    PlayerPrefs.SetInt("ID", meuToken.user);
                 }
                 StartCoroutine(CarregaSceneNova("Logo", 0f));
             }
@@ -168,7 +168,7 @@ public class LoginRequest : MonoBehaviour {
                 else
                 {
                     PlayerPrefs.SetString("Token", meuToken.key);
-                    PlayerPrefs.SetInt("ID", meuToken.id);
+                    PlayerPrefs.SetInt("ID", meuToken.user);
                 }
                 
 

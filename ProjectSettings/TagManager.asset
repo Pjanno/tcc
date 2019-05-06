@@ -10,6 +10,7 @@ TagManager:
   - Fruits
   - Ground
   - NPC
+  - Painel
   layers:
   - Default
   - TransparentFX
