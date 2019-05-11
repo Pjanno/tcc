@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\generalSFX.cs" />
      <Compile Include="Assets\Scripts\GetSetItemBD.cs" />
      <Compile Include="Assets\Scripts\habbit.cs" />
+     <Compile Include="Assets\Scripts\InformacoesItens.cs" />
      <Compile Include="Assets\Scripts\JSON Classes\Data.cs" />
      <Compile Include="Assets\Scripts\JSON Classes\DataCollection.cs" />
      <Compile Include="Assets\Scripts\LoginRequest.cs" />
@@ -74,6 +75,7 @@
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\PreenchePainel.cs" />
      <Compile Include="Assets\Scripts\requestGET.cs" />
+     <Compile Include="Assets\Scripts\REST\AtualizaInventario.cs" />
      <Compile Include="Assets\Scripts\SceneMock.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\TelaGameOver.cs" />

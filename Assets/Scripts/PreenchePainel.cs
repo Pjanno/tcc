@@ -10,11 +10,14 @@ public class PreenchePainel : MonoBehaviour {
     public DataCollection ListaDeItens = new DataCollection();
     public GameObject PrefabLista;
     public GameObject Painel;
+    [SerializeField]
+    protected GameObject PainelConfirmacao;
 
     //====================================================
     public void Awake()
     {
         Painel = GameObject.FindGameObjectWithTag("Painel");
+        PainelConfirmacao = GameObject.Find("PainelConfirmacao");
     }
 
     public void Start()
@@ -94,14 +97,56 @@ public class PreenchePainel : MonoBehaviour {
 
     public void PreenchePainelComLista()
     {
-        foreach(data data in ListaDeItens.data)
+        foreach (data data in ListaDeItens.data)
         {
             GameObject go = PrefabLista;
             var Textos = go.GetComponentsInChildren<Text>();
             Textos[0].text = data.nome_item;
             Textos[1].text = data.quantidade.ToString();
+            go.GetComponent<InformacoesItens>().item_id = data.item_id;
+            go.GetComponent<InformacoesItens>().quantidade = data.quantidade;
             go = Instantiate(PrefabLista, Painel.transform);
         }
-        
+    }
+
+    // CHAMADAS DO PAINEL
+    public void DesisteDeUsar()
+    {
+        PainelConfirmacao.SetActive(false);
+    }
+
+    public void ChamadaPut()
+    {
+        StartCoroutine(AtualizaItem());
+    }
+
+    public IEnumerator AtualizaItem()
+    {
+        int quantidadeNova = PainelConfirmacao.GetComponent<InformacoesItens>().quantidade;
+        quantidadeNova -= 1;
+        int idDoItem = PainelConfirmacao.GetComponent<InformacoesItens>().item_id;
+        int idDoPlayer = PlayerPrefs.GetInt("ID");
+
+        string link = "http://127.0.0.1:8000/api/inventario/" + idDoPlayer.ToString() + "/" + idDoItem.ToString() + "/?quantidade=" + quantidadeNova.ToString();
+
+        byte[] myData = System.Text.Encoding.UTF8.GetBytes(".");
+
+        UnityWebRequest www = UnityWebRequest.Put(link, myData);
+        Debug.Log(PlayerPrefs.GetString("Token"));
+        www.SetRequestHeader("Authorization", "Token " + PlayerPrefs.GetString("Token"));
+
+        yield return www.SendWebRequest();
+
+        if (www.isNetworkError || www.isHttpError)
+        {
+            Debug.Log(www.error);
+            // Aqui vai entrar a animação de log de erro
+        }
+        else
+        {
+            Debug.Log("Funcionou");
+            // Aqui vai entrar o controller da animação
+            PainelConfirmacao.SetActive(false);
+        }
     }
 }
