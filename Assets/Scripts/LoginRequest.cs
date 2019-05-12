@@ -63,7 +63,7 @@ public class LoginRequest : MonoBehaviour {
                     PlayerPrefs.SetString("Token", meuToken.key);
                     PlayerPrefs.SetInt("ID", meuToken.user);
                 }
-                StartCoroutine(CarregaSceneNova("Logo", 0f));
+                StartCoroutine(CarregaSceneNova("TeamLogo", 0f));
             }
         }
     }

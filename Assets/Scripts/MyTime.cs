@@ -42,10 +42,9 @@ public class MyTime : MonoBehaviour {
 		if ( (Input.GetMouseButtonDown(0)) && (qtd_powerup > 0) ) 
         {
             timeLeft = timeLeft + 15;
-			qtd_powerup = qtd_powerup - 1;
+			qtd_powerup -= 1;
 			Time.timeScale = 1f;
 			Button_Powerup.SetActive(false); // ou Button_Powerup.gameObject.SetActive(false);
-			
 	    }
 	}
 	

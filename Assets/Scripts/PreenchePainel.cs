@@ -120,6 +120,11 @@ public class PreenchePainel : MonoBehaviour {
         StartCoroutine(AtualizaItem());
     }
 
+    public void ConfirmaUso()
+    {
+        PainelConfirmacao.SetActive(true);
+    }
+
     public IEnumerator AtualizaItem()
     {
         int quantidadeNova = PainelConfirmacao.GetComponent<InformacoesItens>().quantidade;
@@ -144,9 +149,9 @@ public class PreenchePainel : MonoBehaviour {
         }
         else
         {
+            PainelConfirmacao.GetComponent<Animator>().SetBool("confirmou", true);
             Debug.Log("Funcionou");
             // Aqui vai entrar o controller da animação
-            PainelConfirmacao.SetActive(false);
         }
     }
 }

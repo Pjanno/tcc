@@ -28,7 +28,8 @@ public class MenuPrincipal : MonoBehaviour {
     
     public void Jogar()
     {
-        StartCoroutine(CarregarScene(1.5f, "Level01"));
+        StartCoroutine(AudioFadeOut.FadeOut(this.AudioSourceMenu, 1f));
+        StartCoroutine(CarregarScene(1.5f, "PreStartJogo"));
     }
     public void Config()
     {

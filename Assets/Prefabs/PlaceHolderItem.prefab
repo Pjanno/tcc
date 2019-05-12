@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item_id: 1
-  quantidade: 7
+  quantidade: 5
 --- !u!114 &114173358550141850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2f798cd4cd710419979346566a8f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PainelConfirmacao: {fileID: 0}
+  PainelInformacoesItem: {fileID: 0}
 --- !u!114 &114535724227593000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,7 +155,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 7
+  m_Text: 5
 --- !u!114 &114755953290868940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,7 +339,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1623613110032612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224300231917418738}
@@ -349,7 +351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -12.926605, y: 140.21964}
   m_SizeDelta: {x: 724.80005, y: 166.59998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224704626884658322

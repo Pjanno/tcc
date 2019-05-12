@@ -4,18 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneMock : MonoBehaviour {
+    [SerializeField]
+    private string nomeDaScene;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
     public void ProximaScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(nomeDaScene);
     }
 }
