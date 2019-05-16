@@ -16,7 +16,14 @@ public class LoginRequest : MonoBehaviour {
     }
 
     void Start() {
-
+        if (PlayerPrefs.HasKey("Logado"))
+        {
+            PlayerPrefs.SetInt("Logado", 0);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Logado", 0);
+        }
     }
 
     // Update is called once per frame
@@ -63,6 +70,7 @@ public class LoginRequest : MonoBehaviour {
                     PlayerPrefs.SetString("Token", meuToken.key);
                     PlayerPrefs.SetInt("ID", meuToken.user);
                 }
+                PlayerPrefs.SetInt("Logado", 1);
                 StartCoroutine(CarregaSceneNova("TeamLogo", 0f));
             }
         }

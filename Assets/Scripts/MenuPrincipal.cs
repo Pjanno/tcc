@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour {
 
     public GameObject PainelSair, MainMenuPrincipal, PainelConfig, TransicaoImg;
     public AudioSource AudioSourceMenu;
+    public DataCollection ListaDeItens = new DataCollection();
+    [SerializeField]
+    private string nomeDaScene;
 
     public void AtivaTransicao()
     {
@@ -28,8 +32,9 @@ public class MenuPrincipal : MonoBehaviour {
     
     public void Jogar()
     {
+        VerificaSeTemItensPraUsar();
         StartCoroutine(AudioFadeOut.FadeOut(this.AudioSourceMenu, 1f));
-        StartCoroutine(CarregarScene(1.5f, "PreStartJogo"));
+        StartCoroutine(CarregarScene(1.5f));
     }
     public void Config()
     {
@@ -81,12 +86,12 @@ public class MenuPrincipal : MonoBehaviour {
     }
     
     // COROUTINES ÚTEIS PARA AS ANIMAÇÕES AND SHIT LIKE THAT ==========================
-    IEnumerator CarregarScene(float tempo, string nomeScene)
+    IEnumerator CarregarScene(float tempo)
     {
         Debug.Log("Estou aguardando " + tempo + " segundos para pular de linha");
         yield return new WaitForSeconds(tempo);
         Debug.Log("Pronto!");
-        SceneManager.LoadScene(nomeScene);
+        SceneManager.LoadScene(this.nomeDaScene);
     }
 
     IEnumerator SairAplicacao (float segundos)
@@ -94,5 +99,59 @@ public class MenuPrincipal : MonoBehaviour {
         Debug.Log("Recebi o tempo de " + segundos + " segundos para fechar");
         yield return new WaitForSeconds(segundos);
         Application.Quit();
+    }
+
+    public void VerificaSeTemItensPraUsar()
+    {
+        // Se o player estiver logado [0 - deslogado / 1 - logado]
+        if (PlayerPrefs.HasKey("Logado"))
+        {
+            if (PlayerPrefs.GetInt("Logado") == 1)
+            {
+                StartCoroutine(ObtemListaItens(PlayerPrefs.GetString("Token"), PlayerPrefs.GetInt("ID")));
+            }
+            else if (PlayerPrefs.GetInt("Logado") == 0)
+            {
+                this.nomeDaScene = "Level01";
+            }
+            else
+            {
+                this.nomeDaScene = "Level01";
+            }
+        }
+    }
+
+    public IEnumerator ObtemListaItens(string token, int user)
+    {
+        UnityWebRequest www = UnityWebRequest.Get("http://127.0.0.1:8000/api/inventario/items/" + user + "/");
+        www.SetRequestHeader("Authorization", "Token " + token);
+
+        yield return www.SendWebRequest();
+
+        if (www.isNetworkError || www.isHttpError)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            ListaDeItens = JsonUtility.FromJson<DataCollection>(www.downloadHandler.text);
+            List<data> data = new List<data>();
+            data = ListaDeItens.data;
+
+            Debug.Log(data.Count);
+
+            if (data.Count <= 0)
+            {
+                this.nomeDaScene = "Level01";
+            }
+            else if (data.Count > 0)
+            {
+                this.nomeDaScene = "PreStartJogo";
+            }
+            else
+            {
+                this.nomeDaScene = "Level01";
+            }
+        }
     }
 }
