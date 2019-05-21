@@ -57,6 +57,7 @@
      <Compile Include="Assets\JSON\VectorTemplates.cs" />
      <Compile Include="Assets\Scripts\AjusteVolume.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioFadeOut.cs" />
+     <Compile Include="Assets\Scripts\AudioClipper.cs" />
      <Compile Include="Assets\Scripts\DelayedStartScript.cs" />
      <Compile Include="Assets\Scripts\DestroyFruit.cs" />
      <Compile Include="Assets\Scripts\DestroyThisObj.cs" />
@@ -69,12 +70,14 @@
      <Compile Include="Assets\Scripts\JSON Classes\Data.cs" />
      <Compile Include="Assets\Scripts\JSON Classes\DataCollection.cs" />
      <Compile Include="Assets\Scripts\LoginRequest.cs" />
+     <Compile Include="Assets\Scripts\LoginStatusCheck.cs" />
      <Compile Include="Assets\Scripts\menuCreator.cs" />
      <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
      <Compile Include="Assets\Scripts\MyTime.cs" />
      <Compile Include="Assets\Scripts\NPC.cs" />
      <Compile Include="Assets\Scripts\PauseScript.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
+     <Compile Include="Assets\Scripts\PowerUp.cs" />
      <Compile Include="Assets\Scripts\PreencheDescricaoClass.cs" />
      <Compile Include="Assets\Scripts\PreenchePainel.cs" />
      <Compile Include="Assets\Scripts\requestGET.cs" />

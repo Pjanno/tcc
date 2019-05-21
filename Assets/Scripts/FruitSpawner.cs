@@ -27,6 +27,7 @@ public class FruitSpawner : MonoBehaviour {
         Frutas.GetComponent<SpriteRenderer>().sprite = Frutas.transform.GetChild(IdFruta).GetComponent<SpriteRenderer>().sprite;
 
     }
+
     // AQUI COMEÇA AS COISAS Só DO SPAWNER
   	IEnumerator SpawnFruit(float time)
     {
