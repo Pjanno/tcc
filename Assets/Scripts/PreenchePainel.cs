@@ -8,6 +8,7 @@ public class PreenchePainel : MonoBehaviour {
 
     TokenID meuToken = new TokenID();
     public DataCollection ListaDeItens = new DataCollection();
+    public AudioSource AudioSourceScene;
     public GameObject PrefabLista;
     public GameObject Painel;
     [SerializeField]
@@ -22,14 +23,7 @@ public class PreenchePainel : MonoBehaviour {
 
     public void Start()
     {
-        MockDasEras();
         ListarItens();
-    }
-
-    // MOCK DO LOGIN
-    public void MockDasEras()
-    {
-        StartCoroutine(Login("Felipe", "F3l1p3"));
     }
 
     public IEnumerator Login(string email, string senha)
@@ -117,6 +111,7 @@ public class PreenchePainel : MonoBehaviour {
 
     public void ChamadaPut()
     {
+        StartCoroutine(AudioFadeOut.FadeOut(this.AudioSourceScene, 1f));
         StartCoroutine(AtualizaItem());
     }
 

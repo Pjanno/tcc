@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2327,11 +2327,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4993077317980124, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 4993077317980124, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.6177
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 4993077317980124, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2357,9 +2357,69 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4993077317980124, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.5229002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993077317980124, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.5229002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993077317980124, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.5229002
+      objectReference: {fileID: 0}
+    - target: {fileID: 70783064902209554, guid: c0f8f978c61b84047a0ec21f0e0c1771,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 3.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 70783064902209554, guid: c0f8f978c61b84047a0ec21f0e0c1771,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 50718005853942236, guid: c0f8f978c61b84047a0ec21f0e0c1771,
+        type: 2}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50718005853942236, guid: c0f8f978c61b84047a0ec21f0e0c1771,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50718005853942236, guid: c0f8f978c61b84047a0ec21f0e0c1771,
+        type: 2}
+      propertyPath: m_Mass
+      value: 4.649302
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f8f978c61b84047a0ec21f0e0c1771, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1863559515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1634643083330732, guid: c0f8f978c61b84047a0ec21f0e0c1771,
+    type: 2}
+  m_PrefabInternal: {fileID: 1863559514}
+--- !u!95 &1863559516
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863559515}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 076014738095a394787ea3016d50dc72, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1912300885
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,7 +2468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

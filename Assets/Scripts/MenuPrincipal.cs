@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuPrincipal : MonoBehaviour {
 
-    public GameObject PainelSair, MainMenuPrincipal, PainelConfig, TransicaoImg;
+    public GameObject PainelSair, MainMenuPrincipal, PainelConfig, TransicaoImg, JanelaAviso;
     public AudioSource AudioSourceMenu;
     public DataCollection ListaDeItens = new DataCollection();
     [SerializeField]
@@ -28,6 +29,7 @@ public class MenuPrincipal : MonoBehaviour {
         //Aqui provavelmente só é ativado quando roda a primeira vez esse script na scene
         //então vamos inicializar o que é e o que não é pra ser visto
         PainelSair.SetActive(false);
+        JanelaAviso.SetActive(false);
     }
     
     public void Jogar()
@@ -142,14 +144,20 @@ public class MenuPrincipal : MonoBehaviour {
 
             if (data.Count <= 0)
             {
+                JanelaAviso.SetActive(true);
+                JanelaAviso.GetComponentInChildren<Text>().text = "Você não possui itens para gastar. Estamos te direcionando diretamente para o jogo principal.";
                 this.nomeDaScene = "Level01";
             }
             else if (data.Count > 0)
             {
+                JanelaAviso.SetActive(true);
+                JanelaAviso.GetComponentInChildren<Text>().text = "Você está sendo direcionado para a seleção de itens.";
                 this.nomeDaScene = "PreStartJogo";
             }
             else
             {
+                JanelaAviso.SetActive(true);
+                JanelaAviso.GetComponentInChildren<Text>().text = "Você não está logado, estamos te direcionando para o jogo principal.";
                 this.nomeDaScene = "Level01";
             }
         }
