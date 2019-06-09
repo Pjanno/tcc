@@ -6,15 +6,26 @@ using UnityEngine.UI;
 
 public class MyTime : MonoBehaviour {
 
-	public int timeLeft;
+    public float tempoInicial;
+	public static float timeLeft;
     public GameObject IconeRelogio;
-    public UnityEvent FimDoTempo;
 
-	float qtdPowerup = 1;
+    [SerializeField]
+    private GameObject fimDeJogoCanvas;
+
+    public UnityEvent FimDoTempo;
+    public UnityEvent TempoAcabandoComMusica;
+    public UnityEvent TempoAcabando;
+
+    bool jahRodei;
+
+    float qtdPowerup = 1;
 
     // Use this for initialization
     void Start () {
 		StartCoroutine("LoseTime");
+        jahRodei = false;
+        timeLeft = tempoInicial;
 	}    
 
 	// Update is called once per frame
@@ -22,30 +33,45 @@ public class MyTime : MonoBehaviour {
 
 		this.gameObject.GetComponent<Text>().text = "" + timeLeft;
 
-        if (timeLeft <= 10)
+        
+        if (timeLeft <= 18.681f)
         {
-            IconeRelogio.GetComponent<Animator>().SetBool("desperta", true);
-        }
-        if (timeLeft <= 0) {
+            if (!jahRodei)
+            {
+                if (PowerUp.quantidadeUso == 0)
+                {
+                    TempoAcabandoComMusica.Invoke();
+                }
+                else
+                {
+                    TempoAcabando.Invoke();
+                }
+                IconeRelogio.GetComponent<Animator>().SetBool("desperta", true);
+                jahRodei = true;
+            }
+        }               
+        
+        if (timeLeft <= 0f) {
             StopCoroutine("LoseTime");
+            IconeRelogio.GetComponent<Animator>().SetBool("desperta", false);
             FimDoTempo.Invoke();
         }
 	}
 	
 	IEnumerator LoseTime() {
 		while (true) {
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(1f);
 			timeLeft --;
 		}
 	}
 
-    public void AdicionaMaisTempo(int i)
+    public void AdicionaMaisTempo(float i)
     {
-        this.timeLeft += i;
+        timeLeft += i;
     }
 
-    public void RemoveUmTempo(int i)
+    public void RemoveUmTempo(float i)
     {
-        this.timeLeft -= i;
+        timeLeft -= i;
     }
 }

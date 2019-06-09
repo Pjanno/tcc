@@ -6,6 +6,10 @@ public class FruitSpawner : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject Frutas;
+    [SerializeField]
+    private GameObject Timer;
+    [SerializeField]
+    private int frequencia;
 
     int IdFruta;
     private BoxCollider2D col;
@@ -41,6 +45,13 @@ public class FruitSpawner : MonoBehaviour {
             // Range pra fruta selecionar uma imagem aleatória:
 
             Instantiate(Frutas, temp, Quaternion.identity);
+            if (Random.Range(1,this.frequencia) == Random.Range(1,this.frequencia))
+            {
+                if (MyTime.timeLeft >= 18.681f + TimerPowerUp.valorTempo * 2)
+                {
+                    Instantiate(Timer, temp, Quaternion.identity);
+                }
+            }
         }
 	}
     public void LigaSpawner()

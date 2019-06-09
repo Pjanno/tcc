@@ -111,6 +111,7 @@ public class PreenchePainel : MonoBehaviour {
 
     public void ChamadaPut()
     {
+        
         StartCoroutine(AudioFadeOut.FadeOut(this.AudioSourceScene, 1f));
         StartCoroutine(AtualizaItem());
     }
@@ -146,6 +147,7 @@ public class PreenchePainel : MonoBehaviour {
         {
             PainelConfirmacao.GetComponent<Animator>().SetBool("confirmou", true);
             Debug.Log("Funcionou");
+            PlayerPrefs.SetInt("quantidadeTemp", 1);
             // Aqui vai entrar o controller da animação
         }
     }

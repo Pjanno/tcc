@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour {
 
-    int quantidadeUso = 0;
+    public static int quantidadeUso = 0;
     private GameObject contador, jogador;
 	// Use this for initialization
     void Awake()
@@ -14,7 +14,13 @@ public class PowerUp : MonoBehaviour {
     }
 
 	void Start () {
-        quantidadeUso = 1;
+        if (PlayerPrefs.GetInt("quantidadeTemp") == 0)
+        {
+            quantidadeUso = 0;
+        } else
+        {
+            quantidadeUso = 1;
+        }
 	}
 	
 	// Update is called once per frame
@@ -24,9 +30,9 @@ public class PowerUp : MonoBehaviour {
 
     public void UsarPowerUp()
     {
-        if(Input.GetKeyDown(KeyCode.E) && this.quantidadeUso >= 1)
+        if(Input.GetKeyDown(KeyCode.E) && quantidadeUso >= 1)
         {
-            this.quantidadeUso -= 1;
+            quantidadeUso -= 1;
             PowerUpPraUsar(PlayerPrefs.GetString("PowerUp"));
         }
     }

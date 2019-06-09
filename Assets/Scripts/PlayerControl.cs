@@ -29,8 +29,11 @@ public class PlayerControl : MonoBehaviour {
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
 
+        anim.SetFloat("velY", rb.velocity.y);
+
         if (Input.GetButtonDown ("Jump") && grounded) {
             jumping = true;
+            
         }
     }
 
@@ -38,6 +41,15 @@ public class PlayerControl : MonoBehaviour {
     {
         float move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2 (move * maxSpeed, rb.velocity.y);
+
+        if (move != 0)
+        {
+            this.gameObject.GetComponent<Animator>().SetBool("movendo", true);
+        }
+        else
+        {
+            this.gameObject.GetComponent<Animator>().SetBool("movendo", false);
+        }
 
 	    //Se movimento for menor que zero (ou seja, pra esquerda) e o boneco estiver virado p/ dir ele faz o flip
 	    //Se movimento for maior que zero(ou seja, para direita) e o boneco estiver virado p/ esq ele da o flip

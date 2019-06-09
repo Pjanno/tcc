@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TelaGameOver : MonoBehaviour {
 
@@ -9,18 +10,14 @@ public class TelaGameOver : MonoBehaviour {
 
 	public GameObject gameOverUI;
 
-	void Start () {
-
-	}
-	void Update () 
-	{
-
-	}
+    public void AtivaObjeto()
+    {
+        Debug.Log("Ativei o objeto");
+        gameOverUI.SetActive(true);
+    }
 
 	public void FimDeJogo ()
 	{
-		gameOverUI.SetActive(true);
-		Time.timeScale = 0f;
 		GameOver = true;
 	}
     	
@@ -32,10 +29,11 @@ public class TelaGameOver : MonoBehaviour {
 
 	public void JogarNovamente ()
 	{
-		SceneManager.LoadScene("Level01");
+        Score.scoreValue = 0;
 		gameOverUI.SetActive(false);
 		Time.timeScale = 1f;
 		GameOver = false;
-	}
-	
+        PlayerPrefs.SetInt("quantidadeTemp", 0);
+        SceneManager.LoadScene("Level01");
+    }	
 }
