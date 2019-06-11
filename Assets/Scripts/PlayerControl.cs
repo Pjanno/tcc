@@ -7,67 +7,73 @@ using Debug = UnityEngine.Debug;
 
 public class PlayerControl : MonoBehaviour {
 
-    public float maxSpeed;
     public float jumpForce;
     private bool grounded;
-    private bool jumping;
+    private bool isJumping;
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
-    public Transform groundCheck;
     private float tempo;
     private int segundos;
+    public float moveVelocity;
 
     void Awake ()
     {
         rb = GetComponent<Rigidbody2D> ();
         sprite = GetComponent<SpriteRenderer> ();
         anim = GetComponent<Animator> ();
-    }
+    }   
 
     void Update ()
     {
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
-
-        anim.SetFloat("velY", rb.velocity.y);
-
-        if (Input.GetButtonDown ("Jump") && grounded) {
-            jumping = true;
-            
+        //Pulo
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        {
+            isJumping = true;
         }
-    }
 
-    void FixedUpdate ()
-    {
-        float move = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2 (move * maxSpeed, rb.velocity.y);
+        //Movimentação
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        transform.position += movement * Time.deltaTime * moveVelocity;
 
-        if (move != 0)
+        //Animação Movimentacao
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
             this.gameObject.GetComponent<Animator>().SetBool("movendo", true);
         }
-        else
+        else if (Input.GetAxisRaw("Horizontal") == 0)
         {
             this.gameObject.GetComponent<Animator>().SetBool("movendo", false);
         }
 
-	    //Se movimento for menor que zero (ou seja, pra esquerda) e o boneco estiver virado p/ dir ele faz o flip
-	    //Se movimento for maior que zero(ou seja, para direita) e o boneco estiver virado p/ esq ele da o flip
-        if ((move > 0f && sprite.flipX) || (move < 0f && !sprite.flipX))
-        {
-            Flip();
-        }
+        //Flipping de Sprites
+        Flip();
+    }
 
-        if (jumping) 
+    void OnCollisionStay2D(Collision2D c)
+    {
+        grounded = c.collider.CompareTag("Ground");
+        
+    }
+    void OnCollisionExit2D(Collision2D c)
+    {
+        grounded = false;
+    }
+
+    void FixedUpdate ()
+    {
+        anim.SetFloat("velY", rb.velocity.y);
+        
+        if (isJumping) 
         {
-            rb.AddForce(new Vector2(0f, jumpForce));
-            jumping = false;
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            isJumping = false;
         }
     }
 
     void Flip ()
     {
-        sprite.flipX = !sprite.flipX;
+        sprite.flipX = Input.GetAxis("Horizontal") < 0 ? true : false;
     }
     
     public void AumentarVelocidadeTemp(int v, int t)
@@ -79,11 +85,11 @@ public class PlayerControl : MonoBehaviour {
         bool cond = true;
         while (cond)
         {
-            var vn = this.maxSpeed;
+            var vn = this.moveVelocity;
             Debug.Log("Esperando "+t+" segundos...");
-            this.maxSpeed = v;
+            this.moveVelocity = v;
             yield return new WaitForSeconds(t);
-            this.maxSpeed = vn;
+            this.moveVelocity = vn;
             cond = false;
             Debug.Log("Acabou a espera");
         }
