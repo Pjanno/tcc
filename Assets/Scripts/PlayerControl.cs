@@ -60,6 +60,11 @@ public class PlayerControl : MonoBehaviour {
         grounded = false;
     }
 
+    public void HitEnd()
+    {
+        this.gameObject.GetComponent<Animator>().SetBool("hit", false);
+    }
+
     void FixedUpdate ()
     {
         anim.SetFloat("velY", rb.velocity.y);

@@ -6,15 +6,15 @@ public class TimerPowerUp : MonoBehaviour {
 
     [SerializeField]
     private GameObject contadorRelogio;
-    [SerializeField]
-    private AudioSource aSourceLocal;
-    
+    private GameObject audioManager;
+
     public static float valorTempo;
 
-    public AudioClip somDaFruta;
+    
 
     void Start () {
         contadorRelogio = GameObject.Find("timer");
+        audioManager = GameObject.Find("AudioManager");
     }
 	
 	// Update is called once per frame
@@ -22,18 +22,12 @@ public class TimerPowerUp : MonoBehaviour {
         
     }
 
-    IEnumerator TocaSomDaFruta()
-    {
-        aSourceLocal.PlayOneShot(somDaFruta);
-        yield return new WaitForSeconds(somDaFruta.length);
-    }
-
     void OnCollisionEnter2D(Collision2D c)
     {
         if(c.gameObject.tag == "Player")
         {
             contadorRelogio.GetComponent<MyTime>().AdicionaMaisTempo(valorTempo);
-            StartCoroutine(TocaSomDaFruta());
+            audioManager.GetComponent<InGameAudio>().SomDoPowerUp();
             Destroy(this.gameObject);
         }
         if(c.gameObject.tag == "Ground")

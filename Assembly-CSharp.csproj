@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Audio\AudioFadeOut.cs" />
      <Compile Include="Assets\Scripts\Audio\JumpSound.cs" />
      <Compile Include="Assets\Scripts\AudioClipper.cs" />
+     <Compile Include="Assets\Scripts\BombFunctionScript.cs" />
      <Compile Include="Assets\Scripts\DelayedStartScript.cs" />
      <Compile Include="Assets\Scripts\DestroyFruit.cs" />
      <Compile Include="Assets\Scripts\DestroyThisObj.cs" />

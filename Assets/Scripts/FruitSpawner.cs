@@ -9,7 +9,11 @@ public class FruitSpawner : MonoBehaviour {
     [SerializeField]
     private GameObject Timer;
     [SerializeField]
+    private GameObject Bomb;
+    [SerializeField]
     private int frequencia;
+    [SerializeField]
+    private int frequenciaBombas;
 
     int IdFruta;
     private BoxCollider2D col;
@@ -45,11 +49,20 @@ public class FruitSpawner : MonoBehaviour {
             // Range pra fruta selecionar uma imagem aleatória:
 
             Instantiate(Frutas, temp, Quaternion.identity);
+            // Spawn dos relógios
             if (Random.Range(1,this.frequencia) == Random.Range(1,this.frequencia))
             {
                 if (MyTime.timeLeft >= 18.681f + TimerPowerUp.valorTempo * 2)
                 {
                     Instantiate(Timer, temp, Quaternion.identity);
+                }
+            }
+            // Spawn das bombas
+            if (Random.Range(1, this.frequenciaBombas) == Random.Range(1, this.frequenciaBombas))
+            {
+                if (MyTime.timeLeft >= 18.681f + TimerPowerUp.valorTempo * 2)
+                {
+                    Instantiate(Bomb, temp, Quaternion.identity);
                 }
             }
         }

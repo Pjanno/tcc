@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Felipe/Desktop/TCC/tcc2d.exe
+C:/Users/Felipe/Desktop/Collita2D/Collita.exe
 SceneListBegin?
 Assets/Scenes/Login.unity
 Assets/Scenes/TeamLogo.unity
@@ -128,7 +128,7 @@ fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networki
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 382b8ef512fa8d6108723a01b57af65b UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 d22c788799ee45d8676254eccf20e8b8 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
-d7124a9d4d356e0a046472de0f3a9c1a Assembly-CSharp.dll:.FruitSpawner
+c0c425cc8f64a7d63916776274e92706 Assembly-CSharp.dll:.FruitSpawner
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 486cd95c82d8305219c352c06b776e1f UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -136,7 +136,7 @@ e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSyste
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 96f3ea9f23b6f08e60710ebb4af49174 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 b07b55254f62f2a9100579b3534cf2ad Assembly-CSharp.dll:.SceneMock
-b44b49bcc9afb4992ea66ce818f34598 Assembly-CSharp.dll:.TimerPowerUp
+2f97a9a3bdca21753878f4f8802636ad Assembly-CSharp.dll:.TimerPowerUp
 def34c1b20b4454ad0468e8081b03a26 Assembly-CSharp.dll:.JumpSound
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
@@ -172,7 +172,7 @@ e033f131358cea5a0eabf9561e781deb UnityEngine.TestRunner.dll:UnityEngine.TestTool
 70f7dc248db3379548a88e8d4fa049f8 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.Score
+88bc5b0f74e1f6939b50a24d307fa590 Assembly-CSharp.dll:.Score
 87780680dd8cd369725f31f8b9501948 Assembly-CSharp.dll:.LoginRequest
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.requestGET
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.LoginStatusCheck
@@ -190,6 +190,7 @@ fe6c1c248e38451079f3c02cd9a56714 Assembly-CSharp.dll:.AtualizaInventario
 be74c578d2b9f91b413489a7a339b749 Assembly-CSharp.dll:.InGameAudio
 3775f6a83c7453db07820fa3f749f155 Assembly-CSharp.dll:.NPC
 690d0522253b106b28103091f224673e Assembly-CSharp.dll:.PreencheDescricaoClass
+752b3149d0390e0bb02c227b75fc6075 Assembly-CSharp.dll:.BombFunctionScript
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
