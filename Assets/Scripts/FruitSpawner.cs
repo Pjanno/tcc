@@ -46,24 +46,26 @@ public class FruitSpawner : MonoBehaviour {
             Vector3 temp = transform.position;
             temp.x = Random.Range(x1, x2);
 
-            // Range pra fruta selecionar uma imagem aleatória:
-
-            Instantiate(Frutas, temp, Quaternion.identity);
-            // Spawn dos relógios
-            if (Random.Range(1,this.frequencia) == Random.Range(1,this.frequencia))
+            //Cadeia de Spawns
+            if (Random.Range(1, this.frequencia) == Random.Range(1, this.frequencia))
             {
+                // Spawn dos relógios
                 if (MyTime.timeLeft >= 18.681f + TimerPowerUp.valorTempo * 2)
                 {
                     Instantiate(Timer, temp, Quaternion.identity);
                 }
             }
-            // Spawn das bombas
-            if (Random.Range(1, this.frequenciaBombas) == Random.Range(1, this.frequenciaBombas))
+            else if (Random.Range(1, this.frequenciaBombas) == Random.Range(1, this.frequenciaBombas))
             {
+                // Spawn das bombas
                 if (MyTime.timeLeft >= 18.681f + TimerPowerUp.valorTempo * 2)
                 {
                     Instantiate(Bomb, temp, Quaternion.identity);
                 }
+            }
+            else
+            {
+                Instantiate(Frutas, temp, Quaternion.identity);
             }
         }
 	}

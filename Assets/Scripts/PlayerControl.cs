@@ -27,7 +27,7 @@ public class PlayerControl : MonoBehaviour {
     void Update ()
     {
         //Pulo
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && grounded)
         {
             isJumping = true;
         }

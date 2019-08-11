@@ -16,7 +16,8 @@ public class Score : MonoBehaviour {
     public GameObject fruitSpawner;
 
     void Start () {
-		scoreText = GetComponent<Text>();
+        scoreValue = 0;
+		scoreText = this.gameObject.GetComponent<Text>();
         am = GameObject.Find("AudioManager");
     }
 	void Update () {
@@ -45,9 +46,17 @@ public class Score : MonoBehaviour {
         Destroy(GameObject.Find("FimDeJogo"));
         Destroy(GameObject.Find("timer"));
         Destroy(GameObject.Find("clock"));
-        yield return new WaitForSecondsRealtime(am.GetComponent<InGameAudio>().ClipLenght(7) * 1.2f);      
-        am.GetComponent<InGameAudio>().JacksonKnew();
-        yield return new WaitForSecondsRealtime(am.GetComponent<InGameAudio>().ClipLenght(5));
+        yield return new WaitForSecondsRealtime(am.GetComponent<InGameAudio>().ClipLenght(7) * 1.2f);
+        int rnd = UnityEngine.Random.Range(1, 3);
+        if(rnd == 1)
+        {
+            am.GetComponent<InGameAudio>().JacksonKnew();
+            yield return new WaitForSecondsRealtime(am.GetComponent<InGameAudio>().ClipLenght(5));
+        } else
+        {
+            am.GetComponent<InGameAudio>().JustToSuffer();
+            yield return new WaitForSecondsRealtime(am.GetComponent<InGameAudio>().ClipLenght(6));
+        }            
         Time.timeScale = 1f;
         player.GetComponent<Animator>().SetBool("morreu", true);
         am.GetComponent<InGameAudio>().GritoGoofy();

@@ -29,10 +29,10 @@ public class PreencheDescricaoClass : MonoBehaviour {
                 switch (informacoesDoItem.item_id)
                 {
                     case 1:
-                        textoDaInformacao[1].text = "Red Shoes: Aumenta a velocidade base do nosso herói " +
+                        textoDaInformacao[1].text = "Speedog: Aumenta a velocidade base do nosso herói " +
                                                     "tornando a colheita de frutas mais veloz " +
                                                     "permitindo que você pegue até mesmo frutas que já estão no chão a uma distância maior.";
-                        PlayerPrefs.SetString("PowerUp", "RedShoes");
+                        PlayerPrefs.SetString("PowerUp", "Speedog");
                         break;
                     case 2:
                         textoDaInformacao[1].text = "Time Ruler: Adiciona 15 segundos extras para a colheita. " +

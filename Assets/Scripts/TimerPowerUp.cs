@@ -8,7 +8,7 @@ public class TimerPowerUp : MonoBehaviour {
     private GameObject contadorRelogio;
     private GameObject audioManager;
 
-    public static float valorTempo;
+    public static float valorTempo = 5;
 
     
 

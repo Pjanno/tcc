@@ -10,7 +10,7 @@ public class PauseScript : MonoBehaviour {
 
 	void Update () 
 	{
-		if (Input.GetKeyDown(KeyCode.P))
+		if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && (MyTime.timeLeft >= 19) && (Score.scoreValue >= 0))
 		{
 			if (JogoPausado) {
 				Continuar();

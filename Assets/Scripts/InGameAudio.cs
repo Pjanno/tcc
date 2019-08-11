@@ -7,6 +7,17 @@ public class InGameAudio : MonoBehaviour {
     [SerializeField]
     private AudioClip[] ac;
 
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("Volume"))
+        {
+            this.gameObject.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Volume");
+        } else
+        {
+            this.gameObject.GetComponent<AudioSource>().volume = 80f;
+        }
+    }
+
     public void SomDaFruta()
     {
         this.gameObject.GetComponent<AudioSource>().PlayOneShot(ac[0]);
@@ -58,6 +69,11 @@ public class InGameAudio : MonoBehaviour {
     public void PosGameOverMusic()
     {
         this.gameObject.GetComponent<AudioSource>().PlayOneShot(ac[9]);
+
+    }
+    public void ChineseChime()
+    {
+        this.gameObject.GetComponent<AudioSource>().PlayOneShot(ac[10]);
 
     }
     public float ClipLenght(int n)

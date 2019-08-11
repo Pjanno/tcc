@@ -63,13 +63,10 @@ public class LoginRequest : MonoBehaviour {
                 yield return www.downloadHandler.text;
                 meuToken = JsonUtility.FromJson<TokenID>(www.downloadHandler.text);
 
-                if (PlayerPrefs.HasKey("Token")) {
-                    PlayerPrefs.SetString("Token", meuToken.key);
-
-                } else {
-                    PlayerPrefs.SetString("Token", meuToken.key);
-                    PlayerPrefs.SetInt("ID", meuToken.user);
-                }
+                // Substitui os Tokens e Ids informados pelo usuário
+                PlayerPrefs.SetString("Token", meuToken.key);
+                PlayerPrefs.SetInt("ID", meuToken.user);
+                
                 PlayerPrefs.SetInt("Logado", 1);
                 StartCoroutine(CarregaSceneNova("TeamLogo", 0f));
             }

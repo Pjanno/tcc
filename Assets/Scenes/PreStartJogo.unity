@@ -353,6 +353,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114199549778762302, guid: 3caea14240fe4b74db542dfce0659fa9,
+        type: 2}
+      propertyPath: PainelConfirmacao
+      value: 
+      objectReference: {fileID: 2030177194}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3caea14240fe4b74db542dfce0659fa9, type: 2}
   m_IsPrefabAsset: 0
@@ -1133,8 +1138,8 @@ MonoBehaviour:
   AudioSourceScene: {fileID: 189591743}
   PrefabLista: {fileID: 1623613110032612, guid: 2a03a9bbf8ad97846befafcc17e7bae9,
     type: 2}
-  Painel: {fileID: 0}
-  PainelConfirmacao: {fileID: 0}
+  Painel: {fileID: 1285115935}
+  PainelConfirmacao: {fileID: 2030177194}
 --- !u!1 &976538335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1205054789011672, guid: 3caea14240fe4b74db542dfce0659fa9,
@@ -1318,6 +1323,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1285115935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1432034581772074, guid: 3caea14240fe4b74db542dfce0659fa9,
+    type: 2}
+  m_PrefabInternal: {fileID: 41004159}
 --- !u!1 &1408359088
 GameObject:
   m_ObjectHideFlags: 0

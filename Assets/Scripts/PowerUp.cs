@@ -6,6 +6,7 @@ public class PowerUp : MonoBehaviour {
 
     public static int quantidadeUso = 0;
     private GameObject contador, jogador;
+    private GameObject auMan;
 	// Use this for initialization
     void Awake()
     {
@@ -14,6 +15,7 @@ public class PowerUp : MonoBehaviour {
     }
 
 	void Start () {
+        auMan = GameObject.Find("AudioManager");
         if (PlayerPrefs.GetInt("quantidadeTemp") == 0)
         {
             quantidadeUso = 0;
@@ -30,8 +32,9 @@ public class PowerUp : MonoBehaviour {
 
     public void UsarPowerUp()
     {
-        if(Input.GetKeyDown(KeyCode.E) && quantidadeUso >= 1)
+        if((Input.GetKeyDown(KeyCode.E) && quantidadeUso >= 1) && MyTime.timeLeft >= 19)
         {
+            auMan.GetComponent<InGameAudio>().ChineseChime();
             quantidadeUso -= 1;
             PowerUpPraUsar(PlayerPrefs.GetString("PowerUp"));
         }
@@ -47,10 +50,10 @@ public class PowerUp : MonoBehaviour {
                     this.contador.GetComponent<MyTime>().AdicionaMaisTempo(15);
                     break;
                 }
-            case "RedShoes":
+            case "Speedog":
                 {
-                    Debug.Log("Subi a velocidade pra 10 pontos por 15 segundos");
-                    this.jogador.GetComponent<PlayerControl>().AumentarVelocidadeTemp(10, 15);
+                    Debug.Log("Subi a velocidade pra 14 pontos por 15 segundos");
+                    this.jogador.GetComponent<PlayerControl>().AumentarVelocidadeTemp(14, 15);
                     break;
                 }
         }
